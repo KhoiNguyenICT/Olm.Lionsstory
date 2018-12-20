@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Manager";
+}
+
+@section Scripts
+    {
+    <script type="text/javascript">$('#sampleTable').DataTable();</script>
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <div class="tile-body">
+                <table class="table table-responsive table-bordered" id="sampleTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Created At</th>
+                            <th>Utm_Source</th>
+                            <th>Utm_Team</th>
+                            <th>Utm_Medium</th>
+                            <th>Utm_Campaign</th>
+                            <th>Utm_Adset</th>
+                            <th>Utm_Ads</th>
+                            <th>Utm_Agent</th>
+                            <th>Utm_Team</th>
+                            <th>Keyword</th>
+                            <th>Ads_Link</th>
+                            <th>Fullname</th>
+                            <th>PhoneNumber</th>
+                            <th>HeadSkin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var stt = 1;
+                            foreach (var contact in ViewBag.Contacts)
+                            {
+                                <tr>
+                                    <td>@stt</td>
+                                    <td>@contact.CreatedAt</td>
+                                    <td>@contact.UtmSource</td>
+                                    <td>@contact.UtmTeam</td>
+                                    <td>@contact.UtmMedium</td>
+                                    <td>@contact.UtmCampaign</td>
+                                    <td>@contact.UtmAdset</td>
+                                    <td>@contact.UtmAds</td>
+                                    <td>@contact.UtmAgent</td>
+                                    <td>@contact.UtmTeam</td>
+                                    <td>@contact.Keyword</td>
+                                    <td>@contact.AdsLink</td>
+                                    <td>@contact.Fullname</td>
+                                    <td>@contact.PhoneNumber</td>
+                                    <td>@contact.HeadSkin</td>
+                                </tr>
+                                stt++;
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

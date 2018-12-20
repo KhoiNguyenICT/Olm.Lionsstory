@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "GennerateAdslink";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <h3 class="tile-title">Subscribe</h3>
+            <div class="tile-body">
+                <form class="row">
+                    <div class="form-group col-md-2">
+                        <label for="Domain">Domain</label>
+                        <input id="Domain" class="form-control" type="text" placeholder="Domain">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="Utm_Campaign">Utm_Campaign</label>
+                        <input id="Utm_Campaign" class="form-control" type="text" placeholder="Utm_Campaign">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="Utm_Ads">Utm_Ads</label>
+                        <input id="Utm_Ads" class="form-control" type="text" placeholder="Utm_Ads">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="Utm_Adset">Utm_Adset</label>
+                        <input id="Utm_Adset" class="form-control" type="text" placeholder="Utm_Adset">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="Utm_Agent">Utm_Agent</label>
+                        <input id="Utm_Agent" class="form-control" type="text" placeholder="Utm_Agent">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="Utm_Medium">Utm_Medium</label>
+                        <input id="Utm_Medium" class="form-control" type="text" placeholder="Utm_Medium">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="Utm_Source">Utm_Source</label>
+                        <input id="Utm_Source" class="form-control" type="text" placeholder="Utm_Source">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="Utm_Team">Utm_Team</label>
+                        <input id="Utm_Team" class="form-control" type="text" placeholder="Utm_Team">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="Keyword">Keyword</label>
+                        <input id="Keyword" class="form-control" type="text" placeholder="Keyword">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Ads_Link">Ads_Link</label>
+                        <input id="Ads_Link" class="form-control" type="text" placeholder="Ads_Link">
+                    </div>
+                    <div class="form-group col-md-4 align-self-end">
+                        <button class="btn btn-primary" type="button" onclick="gennerateAdsLink()">
+                            <i class="fa fa-fw fa-lg fa-check-circle"></i>Gennerate Ads Link
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function gennerateAdsLink() {
+        var domain = document.getElementById("Domain");
+        var utmCampaign = document.getElementById("Utm_Campaign");
+        var utmAds = document.getElementById("Utm_Ads");
+        var utmAdset = document.getElementById("Utm_Adset");
+        var utmAgent = document.getElementById("Utm_Agent");
+        var utmMedium = document.getElementById("Utm_Medium");
+        var utmSource = document.getElementById("Utm_Source");
+        var utmTeam = document.getElementById("Utm_Team");
+        var keyword = document.getElementById("Keyword");
+        var adsLink = document.getElementById("Ads_Link");
+        adsLink.value =
+            `${domain.value}/contact?utmSource=${utmSource.value}&utmTeam=${utmTeam.value}&utmAgent=${utmAgent.value}&utmAdset=${utmAdset.value}&utmCampaign=${utmCampaign.value}&utmMedium=${utmMedium.value}&utmAds=${utmAds.value}&keyword=${keyword.value}`;
+    }
+</script>
