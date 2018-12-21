@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Olm.Model.Entities;
@@ -17,6 +18,7 @@ namespace Olm.Web.Controllers
             _contactService = contactService;
         }
 
+        [AllowAnonymous]
         public IActionResult Index(string utmSource, string utmTeam,
             string utmAgent, string utmTerm,
             string utmCampaign, string utmMedium,
@@ -35,6 +37,7 @@ namespace Olm.Web.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult Success()
         {
             return View();
